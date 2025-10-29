@@ -8,7 +8,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({ message: 'Backend is running!' });
 });
-app.get('/api/ping', (req, res) => {
+app.get('api/ping', (req, res) => {
   res.json({ message: 'embemo is goal!' });
 });
 app.listen(port, () => {

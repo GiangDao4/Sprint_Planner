@@ -8,9 +8,14 @@ function App() {
   const [msg, setMsg] = useState('');
   useEffect(() => {
     fetch('/api/ping')
-      .then((res) => res.json())
-      .then((json) => setMsg(json.message))
-      .catch((err) => setMsg('Error: ' + err.message));
+      .then((res) => res.text())
+      .then((data) => {
+
+        setMsg(data);
+      })
+
+      .catch(err => console.error(err))
+
   }, []);
   return (
     <>
