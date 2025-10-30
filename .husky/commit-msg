@@ -1,1 +1,3 @@
-"npx --no -- commitlint --edit `$1" 
+# dd
+npx --no -- commitlint --edit "$1"
+

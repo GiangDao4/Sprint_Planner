@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
-    "start:all": "concurrently \"npm run start --workspace=frontend\" \"npm run start --workspace=backend\""
+    "start:all": "concurrently \"npm run start --workspace=frontend\" \"npm run start --workspace=backend\"",
+    "commitlint": "commitlint --edit"
   },
   "author": "",
   "license": "ISC",

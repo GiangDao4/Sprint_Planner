@@ -1,4 +1,4 @@
 # #!/bin/sh
 # "$(dirname -- "$0")/_/husky.sh"` if present
 # npx lint-staged
-echo "a" && npm run format && npx eslint .
+echo "a" && npm run format 

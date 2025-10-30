@@ -12,8 +12,7 @@ function App() {
       .then((data) => {
         setMsg(data);
       })
-      .catch(err => console.error(err))
-
+      .catch((err) => console.error(err));
   }, []);
   return (
     <>
