@@ -6,7 +6,7 @@ export default tseslint.config(js.configs.recommended, ...tseslint.configs.recom
   ignores: ['node_modules', 'dist'],
   languageOptions: {
     parserOptions: {
-      project: './tsconfig.json',
+      project: '../tsconfig.json',
       tsconfigRootDir: import.meta.dirname,
     },
   },

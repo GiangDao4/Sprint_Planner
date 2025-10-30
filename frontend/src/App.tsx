@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import viteLogo from '/vite.svg';
@@ -10,10 +10,8 @@ function App() {
     fetch('/api/ping')
       .then((res) => res.text())
       .then((data) => {
-
         setMsg(data);
       })
-
       .catch(err => console.error(err))
 
   }, []);
