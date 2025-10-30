@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:5137',
+        target: 'http://backend:5137',
         changeOrigin: true,
         secure: false,
       },

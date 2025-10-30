@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.json('backend is running');
 });
 app.get('/api/ping', (req, res) => {
-  res.json('pong from backend');
+  res.json('pong from backendaa');
 });
 app.listen(port, () => {
   console.log(` Server is listening on http://localhost:${port}`);
