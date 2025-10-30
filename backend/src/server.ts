@@ -6,7 +6,7 @@ const port = process.env.PORT || 5137;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json('backend is running');
+  res.json('backend is runningl');
 });
 app.get('/api/ping', (req, res) => {
   res.json('pong from backenda');
