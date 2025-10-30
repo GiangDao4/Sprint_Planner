@@ -1,17 +1,16 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
-console.log('Loaded ENV:', process.env);
+console.log("Loaded ENV:", process.env);
 
-import express from 'express';
+import express from "express";
 
 // import db from './config/db.js';
 // import PG from 'pg';
 const app = express();
 const port = process.env.PORT || 5137;
-import { Pool } from 'pg';
+import { Pool } from "pg";
 
-
-console.log('Password =', process.env.POSTGRES_PASSWORD);
+console.log("Password =", process.env.POSTGRES_PASSWORD);
 
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -22,25 +21,28 @@ const pool = new Pool({
 });
 
 app.use(express.json());
-pool.connect().then(() => {
-  console.log('Connected to PostgreSQL database');
-}).catch((err) => {
-  console.error('Error connecting to PostgreSQL database:', err);
+pool
+  .connect()
+  .then(() => {
+    console.log("Connected to PostgreSQL database");
+  })
+  .catch((err) => {
+    console.error("Error connecting to PostgreSQL database:", err);
+  });
+app.get("/", (req, res) => {
+  res.json("backend is runningl");
 });
-app.get('/', (req, res) => {
-  res.json('backend is runningl');
-});
-app.get('/api/users', async (req, res) => {
+app.get("/api/users", async (req, res) => {
   try {
-    const result = await pool.query('select * from users');
+    const result = await pool.query("select * from users");
     res.json(result.rows);
   } catch (error) {
-    console.error('Error fetching users:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
-app.get('/api/ping', (req, res) => {
-  res.json('pong from backenda');
+app.get("/api/ping", (req, res) => {
+  res.json("pong from backenda");
 });
 app.listen(port, () => {
   console.log(` Server is listening on http://localhost:${port}`);

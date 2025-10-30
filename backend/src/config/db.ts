@@ -1,10 +1,10 @@
-import { Pool } from 'pg';
+import { Pool } from "pg";
 
 const pool = new Pool({
-  user: 'postgres',
-  host: '127.0.0.1',
-  database: 'trello',
-  password: '123456',
+  user: "postgres",
+  host: "127.0.0.1",
+  database: "trello",
+  password: "123456",
   port: 5432,
 });
 
