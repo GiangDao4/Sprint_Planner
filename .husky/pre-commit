@@ -1,4 +1,4 @@
-# #!/bin/sh
+# !/bin/sh
 # "$(dirname -- "$0")/_/husky.sh"` if present
 npx lint-staged
 echo "a" && npm run format 
