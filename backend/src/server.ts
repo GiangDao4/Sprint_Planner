@@ -6,12 +6,11 @@ import express from "express";
 import { Pool } from "pg";
 
 const pool = new Pool({
-
-  user: 'postgres',
-  password: '123456',
-  host: 'db',
+  user: "postgres",
+  password: "123456",
+  host: "db",
   port: 5432,
-  database: 'trello'
+  database: "trello",
 });
 
 const app = express();
@@ -20,10 +19,9 @@ const port = process.env.PORT || 5137;
 
 // console.log("Password =", process.env.DB_PASSWORD);
 
-
-
 app.use(express.json());
-pool.connect()
+pool
+  .connect()
   .then(() => {
     console.log("Connected to PostgreSQL database");
   })
@@ -34,7 +32,6 @@ app.get("/", (req, res) => {
   res.json("backend is running");
 });
 app.get("/api/users", async (req, res) => {
-
   console.log("GET /api/users called1");
   try {
     const result = await pool.query("select * from users");
@@ -59,4 +56,3 @@ app.use((req, res, next) => {
   console.log("Incoming request:", req.method, req.url);
   next();
 });
-
