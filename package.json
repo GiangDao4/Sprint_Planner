@@ -33,7 +33,7 @@
   },
   "lint-staged": {
     "frontend/src/**/*.{ts,tsx,js,jsx}": [
-      "eslint --config frontend/eslint.config.js --fix"
+      "eslint --config frontend/src/eslint.config.js --fix"
     ],
     "backend/src/**/*.{ts,tsx,js,jsx}": [
       "eslint --config backend/src/eslint.config.js --fix"
