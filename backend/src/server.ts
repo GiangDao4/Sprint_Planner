@@ -6,18 +6,23 @@ import express from "express";
 import { Pool } from "pg";
 
 const pool = new Pool({
-  user: "postgres",
-  password: "123456",
-  host: "db",
-  port: 5432,
-  database: "trello",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  database: process.env.DB_NAME
+
 });
 
 const app = express();
 const port = process.env.PORT || 5137;
 // import { Pool } from "pg";
 
-// console.log("Password =", process.env.DB_PASSWORD);
+console.log("port =", Number(process.env.DB_PORT));
+console.log("password =", Number(process.env.DB_PASSWORD));
+console.log("host =", process.env.DB_HOST);
+console.log("ussf =", process.env.DB_USER);
+console.log("database =", process.env.DB_NAME);
 
 app.use(express.json());
 pool
